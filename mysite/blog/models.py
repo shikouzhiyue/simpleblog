@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 # DateTimeField：日期时间类型
 # ForeignKey：外键类型
 
+
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)

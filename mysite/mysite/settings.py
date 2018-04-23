@@ -25,18 +25,18 @@ SECRET_KEY = 's3l_hn6erw-vj7v4*gcz-4!6an^)8lgw&x7_g@n)6m-d^!c0ea'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*','shikouzhiyue.pythonanywhere.com']
+ALLOWED_HOSTS = ['*', 'shikouzhiyue.pythonanywhere.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth',          #身份验证系统
-    'django.contrib.contenttypes',  #内容类型
-    'django.contrib.sessions',      #session框架
-    'django.contrib.messages',      #消息框架
-    'django.contrib.staticfiles',   #静态文件管理框架
+    'django.contrib.auth',  # 身份验证系统
+    'django.contrib.contenttypes',  # 内容类型
+    'django.contrib.sessions',  # session框架
+    'django.contrib.messages',  # 消息框架
+    'django.contrib.staticfiles',  # 静态文件管理框架
     'blog',
 ]
 
@@ -104,11 +104,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+# Django1.9以后language code 'zh-cn'就被丢弃了，使用'zh-hans'代替。
+LANGUAGE_CODE = 'zh-Hans'
 
-TIME_ZONE = 'UTC'
-
-
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -117,8 +118,11 @@ USE_L10N = True
 USE_TZ = True
 
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
